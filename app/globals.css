@@ -6,3 +6,16 @@
 body{padding-left:env(safe-area-inset-left);padding-right:env(safe-area-inset-right);padding-bottom:env(safe-area-inset-bottom)}
 .pwa-notices:empty{display:none}.pwa-notices{margin:0 0 24px}.pwa-notice{display:flex;align-items:center;gap:15px;padding:18px 20px;margin-top:12px;border:1px solid #cedbbd;border-radius:14px;background:#f0f5e7}.pwa-notice>div{flex:1;min-width:0}.pwa-notice strong{font-size:13px}.pwa-notice p{font-size:12px;line-height:1.7;color:#64745d;margin-top:4px}.pwa-notice .install-help{margin-top:8px;color:var(--ink)}.pwa-notice img{border-radius:11px;flex-shrink:0}.pwa-dismiss{align-self:flex-start;padding:5px;display:flex}.pwa-notice .primary{white-space:nowrap}
 @media(max-width:720px){.pwa-notices{margin-bottom:20px}.pwa-notice{padding:16px;gap:12px;flex-wrap:wrap}.pwa-notice>div{flex-basis:calc(100% - 100px)}.pwa-notice>.primary{margin-left:56px}.pwa-dismiss{margin-left:auto}}
+
+.celebration-dialog{position:fixed;inset:0;width:100%;max-width:none;height:100dvh;max-height:none;margin:0;padding:24px;border:0;background:transparent;color:var(--ink);overflow:auto;z-index:10}
+.celebration-dialog[open]{display:flex;align-items:center;justify-content:center}
+.celebration-dialog::backdrop{background:#1e352baa;backdrop-filter:blur(6px)}
+.celebration-card{position:relative;z-index:1;text-align:center;background:var(--paper);border:1px solid var(--border);border-radius:24px;padding:46px 30px 32px;max-width:480px;width:100%;box-shadow:0 24px 80px #142c3040;max-height:calc(100dvh - 48px);overflow:auto}
+.celebration-trophy{display:inline-grid;place-items:center;width:100px;height:100px;border-radius:50%;background:#edf3db;color:#69833e;margin-bottom:22px}
+.celebration-card .eyebrow{justify-content:center}.celebration-card h2{font-size:clamp(26px,6vw,38px);letter-spacing:-1px;line-height:1.3;margin:14px 0;overflow-wrap:anywhere}
+.celebration-score{color:#748065;margin:0 0 28px}.celebration-score strong{font-size:30px;color:var(--green);margin-right:4px}
+.confetti{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:2}
+.confetti i{position:absolute;top:-24px;left:var(--x);width:9px;height:15px;border-radius:2px;opacity:0;animation:confetti-fall var(--duration) var(--delay) ease-in forwards}
+.confetti i:nth-child(3n){width:10px;height:10px;border-radius:50%}
+@keyframes confetti-fall{0%{opacity:0;transform:translate3d(0,-20px,0) rotate(0)}10%{opacity:1}85%{opacity:1}100%{opacity:0;transform:translate3d(var(--drift),110dvh,0) rotate(var(--spin))}}
+@media(prefers-reduced-motion:reduce){.confetti{display:none}}
